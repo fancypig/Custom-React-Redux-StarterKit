@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import allReducers from './reducers/index'
 import App from './containers'
 
-
 const store = createStore(allReducers)
 
 render(

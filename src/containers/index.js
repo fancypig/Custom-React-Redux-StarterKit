@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
+import Home from '../components/home'
+import SecondHome from '../components/secondHome'
+import {Router, Route,IndexRoute, hashHistory} from "react-router"
 
 export default class App extends Component{
   render(){
     return(
-      <div>
-        <h1> Hello World </h1>
-      </div>
+      <Router history = {hashHistory}>
+        <Route path = "/" component = {Home}>
+          <IndexRoute component = {SecondHome}></IndexRoute>
+        </Route>
+      </Router>
     );
   }
 }
