@@ -8,7 +8,10 @@ export default class App extends Component{
     return(
       <Router history = {hashHistory}>
         <Route path = "/" component = {Home}>
-          <IndexRoute component = {SecondHome}></IndexRoute>
+
+        </Route>
+        <Route path= "/second" component = {SecondHome}>
+
         </Route>
       </Router>
     );
