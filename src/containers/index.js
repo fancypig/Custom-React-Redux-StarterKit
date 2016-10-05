@@ -1,17 +1,18 @@
 import React, {Component} from 'react'
-import Home from '../components/home'
-import SecondHome from '../components/secondHome'
+import Home from './home'
+import First from '../components/first_component'
+import Second from '../components/second_component'
 import {Router, Route,IndexRoute, hashHistory} from "react-router"
 
 export default class App extends Component{
   render(){
+
     return(
       <Router history = {hashHistory}>
         <Route path = "/" component = {Home}>
-
-        </Route>
-        <Route path= "/second" component = {SecondHome}>
-
+          <IndexRoute component = {First}/>
+          <Route path= "/second(/:param)" component = {Second}>
+          </Route>
         </Route>
       </Router>
     );
