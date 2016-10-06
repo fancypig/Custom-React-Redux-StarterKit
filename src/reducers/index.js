@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
+import User from './user';
+import ActiveUser from './active-user';
+
+
 const allReducers = combineReducers({
-  fun:function functionName() {
-    return 'starter kit'
-  }
+  users:User,
+  activeUser: ActiveUser
 });
 
 export default allReducers
