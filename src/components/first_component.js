@@ -9,9 +9,9 @@ export default class First extends Component{
       marginTop: "100px"
     }
     return(
-      <div  className = {styles.first}>
-        <h1 style = {Styles}> I was told to save the world</h1>
-        <Link to = "second/param-example"> secondHome </Link>
+      <div  className={styles.first}>
+        <h1 style={Styles}> I was told to save the world</h1>
+        <Link to="second/param-example"> secondHome </Link>
 
       </div>
     );

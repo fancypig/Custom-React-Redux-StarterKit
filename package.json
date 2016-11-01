@@ -1,9 +1,13 @@
 {
-  "name": "react-15.3.2",
+  "name": "Custom-React-Redux-StarterKit",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
   "dependencies": {
+    "react-scripts": "0.7.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
@@ -23,9 +27,11 @@
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start node index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC"

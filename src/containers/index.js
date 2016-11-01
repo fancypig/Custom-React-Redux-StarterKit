@@ -8,10 +8,10 @@ export default class App extends Component{
   render(){
 
     return(
-      <Router history = {hashHistory}>
-        <Route path = "/" component = {Home}>
-          <IndexRoute component = {First}/>
-          <Route path= "/second(/:param)" component = {Second}>
+      <Router history={hashHistory}>
+        <Route path="/" component={Home}>
+          <IndexRoute component={First}/>
+          <Route path="/second(/:param)" component={Second}>
           </Route>
         </Route>
       </Router>
