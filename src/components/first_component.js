@@ -6,11 +6,13 @@ export default class First extends Component{
 
   render(){
     const Styles = {
-      marginTop: "100px"
+      h1Style:{
+        marginTop: "10px"
+      }
     }
     return(
       <div  className = {styles.first}>
-        <h1 style = {Styles}> I was told to save the world</h1>
+        <h1 style = {Styles.h1Style}> I was told to save the world</h1>
         <Link to = "second/param-example"> secondHome </Link>
 
       </div>
