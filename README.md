@@ -7,20 +7,33 @@ Type below commands in console: </p>
 
 <h1>Version 1:</h1>
 <p>(more comprehensive one that's on branch master, using webpack. It has features such as livereload)</p>
-<ul>
-<li>git clone https://github.com/fancypig/Custom-React-Redux-StarterKit.git</li>
-<li>cd Custom-React-Redux-StarterKit</li>
-<li>npm install</li>
-<li>npm start</li>
-</ul>
-
+```
+git clone https://github.com/fancypig/Custom-React-Redux-StarterKit.git
+```
+```
+cd Custom-React-Redux-StarterKit
+```
+```
+npm install
+```
+```
+npm start
+```
 
 <h1>Version 2:</h1>
 <p>(simpler version that does not use webpack)</p>
-<ul>
-<li>git clone https://github.com/fancypig/Custom-React-Redux-StarterKit.git</li>
-<li>cd Custom-React-Redux-StarterKit</li>
-<li>git checkout simpleVersion</li>
-<li>npm install</li>
-<li>npm start</li>
-</ul>
+```
+git clone https://github.com/fancypig/Custom-React-Redux-StarterKit.git
+```
+```
+cd Custom-React-Redux-StarterKit
+```
+```
+git checkout simpleVersion
+```
+```
+npm install
+```
+```
+npm start
+```
