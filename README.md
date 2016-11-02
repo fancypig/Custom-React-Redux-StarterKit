@@ -2,8 +2,8 @@
 
 
 # Usage:
-<h2>Directs to the directory where you want to download this package <br/>
-Type below commands in console: </h2>
+<p>Directs to the directory where you want to download this package <br/>
+Type below commands in console: </p>
 
 <h1>Version 1:</h1>
 <p>(more comprehensive one that's on branch master, using webpack. It has features such as livereload)</p>
