@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router";
-import styles from '../style.css'
+import styles from '../style.scss'
 
 export default class First extends Component{
 

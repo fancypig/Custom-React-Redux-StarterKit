@@ -58,7 +58,7 @@ class Home extends Component{
             border: 'solid 1px #16A085',
             borderRadius: '10px'
           }}
-          style = {{position: 'absolute', top: '10px', left: '100px'}}
+          style = {{position: 'absolute', top: '0px', left: '100px'}}
           >
           <div><i className = {this.state.isOpen ? "fa fa-times" : "fa fa-bars"}> </i></div>
           <div><i className = 'fa fa-home'></i></div>
@@ -77,7 +77,7 @@ class Home extends Component{
           <a style = {style.menuItem} onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
         </BurgerMenu>
         <div id="page-wrap" style={{textAlign: 'center', width:'100%', height:'100%', background:'#ccc'}}>
-          <h1> Hello World</h1>
+          <h1 style={{margin:'0'}}>Hello World</h1>
           {this.props.children}
         </div>
       </div>
