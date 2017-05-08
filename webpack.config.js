@@ -1,50 +1,47 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
-
-var extractCSS = new ExtractTextPlugin('styles.css',{
-  allChunks:true
-});
+var webpack = require('webpack');
+var WatchLiveReloadPlugin = require('webpack-watch-livereload-plugin');
 
 module.exports = {
-  entry: process.env.NODE_ENV === 'production' ? ['./src'] : ['./src','webpack-hot-middleware/client?reload=true'],
+    devtool: 'cheap-module-eval-source-map',
+    entry: __dirname+ "/src",
+    output: {
+        path: '/',
+        filename: 'bundle.js'
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                loader: 'babel',
+                exclude: /node_modules/,
+                query:{
+                    presets: ['es2015','react']
+                }
+            },
+            {
+              test: /\.css$/,
+              loader: 'style-loader'
+            },
+            {
+              test: /\.css$/,
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            }
+        ]
+    },
 
-  devtool: process.env.NODE_ENV === 'production' ? 'cheap-module-source-map' : 'source-map',
-  output: {
-    path:path.resolve('public'),
-    filename: 'scripts/bundle.js',
-    publicPath: '/'
-  },
-
-  module: {
-    loaders:[
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query:{
-          presets: process.env.NODE_ENV==='production'? ['es2015','react'] : ['es2015','react']
-        }
-      },
-      {
-          test: /\.scss$/,
-          loader: extractCSS.extract(['css','sass'])
-      }
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new WatchLiveReloadPlugin({
+            files: [
+                // Replace these globs with yours
+                './public/index.html',
+                './src'
+            ]
+        }),
     ]
-  },
-  plugins: process.env.NODE_ENV === 'production' ? [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    extractCSS
-  ] : [
-    extractCSS,
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
-}
+};

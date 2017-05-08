@@ -1,4 +1,16 @@
-.first {
-  margin-left: 40px; }
-
+*{
+  margin:0 auto;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+html{
+  width: 100%;
+  height:100%;
+}
+#app{
+  width:100%;
+  height:100%;
+}
 /*# sourceMappingURL=styles.css.map*/

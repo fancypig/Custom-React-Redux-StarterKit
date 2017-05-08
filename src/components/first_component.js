@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from "react-router";
-import styles from '../style.scss'
 
 export default class First extends Component{
 
@@ -11,9 +10,9 @@ export default class First extends Component{
       }
     }
     return(
-      <div  className = {styles.first}>
+      <div>
         <h1 style = {Styles.h1Style}> I was told to save the world</h1>
-        <Link to = "second/param-example"> secondHome </Link>
+        <Link to = "second/param-example">secondHome </Link>
 
       </div>
     );
