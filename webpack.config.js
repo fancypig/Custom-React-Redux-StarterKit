@@ -39,7 +39,7 @@ module.exports = {
         new WatchLiveReloadPlugin({
             files: [
                 // Replace these globs with yours
-                './public/index.html',
+                './public',
                 './src'
             ]
         }),
