@@ -21,16 +21,12 @@ module.exports = {
             },
             {
               test: /\.css$/,
-              loader: 'style-loader'
+              loader: 'style!css'
             },
             {
-              test: /\.css$/,
-              loader: 'css-loader',
-              query: {
-                modules: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
+              test: /\.less$/,
+              loader: 'style!css!less'
+            },
         ]
     },
 
