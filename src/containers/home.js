@@ -69,14 +69,14 @@ class Home extends Component{
   }
   render(){
     return(
-      <div id="outer-container" style={{width:'100%', height:'100%'}}>
+      <div id="outer-container" >
         <BurgerMenu outerContainerId={ "outer-container" } isOpen={this.state.isOpen} pageWrapId={ "page-wrap" } styles = {style}>
           <a id="home" style = {style.menuItem} className="menu-item" href="/">Home</a>
           <a id="about" style = {style.menuItem} className="menu-item" href="/second">About</a>
           <a id="contact" style = {style.menuItem} className="menu-item" href="/contact">Contact</a>
           <a style = {style.menuItem} onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
         </BurgerMenu>
-        <div id="page-wrap" style={{textAlign: 'center', width:'100%', height:'100%', background:'#ccc'}}>
+        <div id="page-wrap">
           <h1 style={{margin:'0'}}>Hello World</h1>
           {this.props.children}
         </div>

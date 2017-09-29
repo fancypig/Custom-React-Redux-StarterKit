@@ -1,47 +1,126 @@
 var path = require('path');
 var webpack = require('webpack');
-var WatchLiveReloadPlugin = require('webpack-watch-livereload-plugin');
-
-module.exports = {
-    devtool: 'cheap-module-eval-source-map',
+var BUILD_DIRNAME = 'public/scripts';
+var BUILD_PATH = path.resolve(__dirname, BUILD_DIRNAME);
+var config = {
+    devtool: process.env.NODE_ENV === 'production' ? 'cheap-module-source-map' : 'source-map',
     entry: __dirname+ "/src",
     output: {
-        path: '/',
+        path: BUILD_PATH,
         filename: 'bundle.js'
     },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query:{
-                    presets: ['es2015','react']
+                    presets: ['es2015','react'],
                 }
             },
             {
               test: /\.css$/,
-              loader: 'style-loader'
+              loader: 'style-loader!css-loader'
             },
             {
-              test: /\.css$/,
-              loader: 'css-loader',
-              query: {
-                modules: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
+              test: /\.less$/,
+              loader: 'style-loader!css-loader!less-loader'
+            },
         ]
     },
+    devServer: {
+        port: 4000,
+        historyApiFallback: true,
+        hot: true,
+        inline: true,
+        host:'0.0.0.0',
 
+        proxy:{
+            '/api/ad/*': {
+                target:'http://192.168.1.20:9526',
+                secure: true,
+                changeOrigin: true
+            },
+            '/api/cmc/*': {
+                target:'http://192.168.1.20:9526',
+                secure: true,
+                changeOrigin: true
+            },
+        }
+    },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new WatchLiveReloadPlugin({
-            files: [
-                // Replace these globs with yours
-                './public/index.html',
-                './src'
-            ]
-        }),
+        new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV':JSON.stringify(process.env.NODE_ENV||'development')
+          }
+        })
+        // new webpack.optimize.OccurrenceOrderPlugin(),
+        // new WatchLiveReloadPlugin({
+        //     files: [
+        //         // Replace these globs with yours
+        //         './public',
+        //         './src'
+        //     ]
+        // }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false,
+        //         // 用于压缩的时候去除log
+        //         drop_debugger:true,
+        //         drop_console:true
+        //     }
+        // })
+
     ]
 };
+
+module.exports = config;
+
+// var path = require('path');
+// var webpack = require('webpack');
+// var WatchLiveReloadPlugin = require('webpack-watch-livereload-plugin');
+
+// module.exports = {
+//     devtool: 'cheap-module-eval-source-map',
+//     entry: __dirname+ "/src",
+//     output: {
+//         path: '/',
+//         filename: 'bundle.js'
+//     },
+//     module: {
+//         loaders: [
+//             {
+//                 test: /\.jsx?$/,
+//                 loader: 'babel',
+//                 exclude: /node_modules/,
+//                 query:{
+//                     presets: ['es2015','react']
+//                 }
+//             },
+//             {
+//               test: /\.css$/,
+//               loader: 'style-loader'
+//             },
+//             {
+//               test: /\.css$/,
+//               loader: 'css-loader',
+//               query: {
+//                 modules: true,
+//                 localIdentName: '[name]__[local]___[hash:base64:5]'
+//               }
+//             }
+//         ]
+//     },
+
+//     plugins: [
+//         new webpack.optimize.OccurrenceOrderPlugin(),
+//         new WatchLiveReloadPlugin({
+//             files: [
+//                 // Replace these globs with yours
+//                 './public/index.html',
+//                 './src'
+//             ]
+//         }),
+//     ]
+// };
