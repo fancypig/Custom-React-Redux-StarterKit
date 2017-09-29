@@ -1,14 +1,17 @@
-*{
-  margin:0 auto;
-}
 body{
+  font-family: 'Avenir', 'Century Gothic';
   width: 100%;
   min-height: 100vh;
 }
 html{
   width: 100%;
   min-height:100vh;
+
 }
+*{
+  margin:0;
+}
+
 #app{
   width:100%;
   min-height:100vh;
@@ -22,5 +25,132 @@ html{
   width: 100%;
   min-height: 100vh;
   background: #ccc;
+
 }
-/*# sourceMappingURL=styles.css.map*/
+#bgDiv{
+  background-color: #494949;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+button{
+  cursor: pointer;
+}
+#topBar{
+  background-color: #f48942;
+  height:80px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color:#f9f9f9;
+  margin-bottom: 10px;
+}
+#container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#container h1{
+  letter-spacing: 3px;
+}
+#loginDialog{
+  width: 40%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 40px;
+}
+#signupDialog{
+  width: 40%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 40px;
+}
+.signupButton{
+  width: 45%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #a5a5a5;
+  margin-top: 40px;
+  border-width: 0;
+  letter-spacing: 2px;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+#headBar{
+  width:100%;
+  height:60px;
+  background-color: #a5a5a5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  letter-spacing: 2px;
+}
+#inputs{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.loginInput{
+  height: 40px; 
+  width: 65%;
+  margin-top: 30px;
+  border-radius: 2px;
+  border-width: .5px;
+  border-style: solid;
+  border-color: #ccc;
+  padding-left: 10px;
+}
+#errContainer{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:60px;
+  top:0;
+  left: 0;
+  background-color: #f7adad;
+}
+#loginDialog button{
+  width: 40%;
+  height: 40px;
+  background-color: #a5a5a5;
+  margin-top: 30px;
+  border-width: 0;
+  letter-spacing: 2px;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+#signupLink{
+  position: absolute;
+  right: 20px;
+  font-size: 15px;
+  bottom: 10px;  
+}
+#buttonGroup{
+  width: 70%;
+  display: flex;
+
+}

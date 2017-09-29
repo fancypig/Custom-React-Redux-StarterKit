@@ -3,7 +3,6 @@ import {Link} from "react-router";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux'
 import {selectUser} from '../actions/index'
-import UserDetails from './user-detail';
 import Menu from 'react-motion-menu'
 var BurgerMenu = require('react-burger-menu').pushRotate;
 
